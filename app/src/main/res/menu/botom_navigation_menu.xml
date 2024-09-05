@@ -1,0 +1,20 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_search"
+        android:icon="@drawable/menu_search"
+        android:title="搜索"
+        ></item>
+    <item android:id="@+id/menu_show"
+        android:icon="@drawable/menu_show"
+        android:title="展示"
+        ></item>
+    <item android:id="@+id/menu_favorate"
+        android:icon="@drawable/menu_favorate"
+        android:title="收藏"
+        ></item>
+    <item android:id="@+id/menu_历史"
+        android:icon="@drawable/menu_history"
+        android:title="历史"
+        ></item>
+
+</menu>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent">
+
+<!--    设置主体-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+    </FrameLayout>
+
+
+<!--    底部导航栏-->
+    <!--    labelVisibilityMode    让所有label都展示-->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:background="@color/white_menu_bck"
+        app:itemTextColor="@color/color_botom_bar"
+        app:itemIconTint="@color/color_botom_bar"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/botom_navigation_menu"
+        android:layout_height="wrap_content">
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+</LinearLayout>
