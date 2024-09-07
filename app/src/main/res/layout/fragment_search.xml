@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FavorateFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/write_text"
+            android:background="#5EDAA4"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"></EditText>
+        <Button
+            android:id="@+id/writeOuterBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="外部存储写入"
+            android:textSize="@dimen/btn_text_size"></Button>
+        <Button
+            android:id="@+id/readOuterBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="外部存储读取"
+            android:textSize="@dimen/btn_text_size"></Button>
+        <Button
+            android:id="@+id/writeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="内部存储写入"
+            android:textSize="@dimen/btn_text_size"></Button>
+        <Button
+            android:id="@+id/readBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="内部存储读取"
+            android:textSize="@dimen/btn_text_size"></Button>
+
+        <TextView
+            android:id="@+id/show_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="这里是搜索"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+</RelativeLayout>

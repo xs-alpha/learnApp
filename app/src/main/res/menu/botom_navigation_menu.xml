@@ -12,7 +12,7 @@
         android:icon="@drawable/menu_favorate"
         android:title="收藏"
         ></item>
-    <item android:id="@+id/menu_历史"
+    <item android:id="@+id/menu_history"
         android:icon="@drawable/menu_history"
         android:title="历史"
         ></item>

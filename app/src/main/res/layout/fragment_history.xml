@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.FavorateFragment">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:background="#98DCEF"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/tool_bar_bak"></ImageView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:text="编辑"></TextView>
+    </Toolbar>
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/anim_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="逐渐透明"
+            android:textSize="@dimen/btn_text_size"></Button>
+
+        <EditText
+            android:id="@+id/write_Sp"
+            android:background="#5EDAA4"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"></EditText>
+
+
+        <Button
+            android:id="@+id/writeSpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="内部存储写入"
+            android:textSize="@dimen/btn_text_size"></Button>
+        <Button
+            android:id="@+id/readSpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="内部存储读取"
+            android:textSize="@dimen/btn_text_size"></Button>
+
+        <TextView
+            android:id="@+id/show_sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="这里是搜索"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/tool_save"
+            android:src="@drawable/tool_save"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="35dp"></ImageView>
+        <ImageView
+            android:id="@+id/tool_del"
+            android:src="@drawable/tool_del"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="35dp"></ImageView>
+    </LinearLayout>
+
+</RelativeLayout>
