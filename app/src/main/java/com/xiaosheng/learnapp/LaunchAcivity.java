@@ -43,7 +43,9 @@ public class LaunchAcivity extends AppCompatActivity {
         fragmentList.add(new ShowFragment());
 
         // 初始化,初次进入,显示首页
-        showFragment(fragmentList.get(1));
+        showFragment(fragmentList.get(0));
+        // 设置默认选中的项，比如我们默认选中“收藏”项
+        binding.bottomNavigation.setSelectedItemId(R.id.menu_favorate);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 

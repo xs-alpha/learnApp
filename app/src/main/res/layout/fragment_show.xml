@@ -3,14 +3,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".fragment.FavorateFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
-        android:text="这里是展示" />
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/start_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="启动服务"
+                android:textSize="@dimen/btn_text_size"></Button>
+
+            <Button
+                android:id="@+id/stop_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="停止服务"
+                android:textSize="@dimen/btn_text_size"></Button>
+
+            <Button
+                android:id="@+id/start_bro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="启动广播"
+                android:textSize="@dimen/btn_text_size"></Button>
+
+            <Button
+                android:id="@+id/dyn_bro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="动态广播"
+                android:textSize="@dimen/btn_text_size"></Button>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/write_cache"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="写缓存"
+                android:textSize="@dimen/btn_text_size"></Button>
+
+            <Button
+                android:id="@+id/read_jar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="读dex"
+                android:textSize="@dimen/btn_text_size"></Button>
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

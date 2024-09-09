@@ -17,6 +17,11 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.xiaosheng.learnapp.R;
 import com.xiaosheng.learnapp.databinding.FragmentFavorateBinding;
+import com.youth.banner.adapter.BannerImageAdapter;
+import com.youth.banner.holder.BannerImageHolder;
+import com.youth.banner.indicator.CircleIndicator;
+
+import java.util.ArrayList;
 
 
 public class FavorateFragment extends Fragment {
@@ -32,8 +37,40 @@ public class FavorateFragment extends Fragment {
         binding = FragmentFavorateBinding.inflate(inflater, container, false);
 
         init();
+        initBanner();
         return binding.getRoot();
 
+    }
+
+    private void initBanner() {
+        //--------------------------简单使用-------------------------------
+//        binding.banner.addBannerLifecycleObserver(this)//添加生命周期观察者
+//                .setAdapter(new BannerImageAdapter(DataBean.getTestData()) {
+//                    @Override
+//                    public void onBindView(Object holder, Object data, int position, int size) {
+//
+//                    }
+//                })
+//                .setIndicator(new CircleIndicator(getContext()));
+
+        //—————————————————————————如果你想偷懒，而又只是图片轮播————————————————————————
+        ArrayList<String> bannerUrls = new ArrayList<>();
+        bannerUrls.add("https://cn.bing.com/th?id=OHR.Alesund_ZH-CN9437421934_UHD.jpg");
+        bannerUrls.add("https://cn.bing.com/th?id=OHR.CascadesNP_ZH-CN1830542356_1920x1080.jpg");
+        bannerUrls.add("https://dailybing.com/api/v1/20240501/ja-jp/MBL");
+        binding.banner.setAdapter(new BannerImageAdapter<String>(bannerUrls) {
+                    @Override
+                    public void onBindView(BannerImageHolder holder, String url, int position, int size) {
+                        //图片加载自己实现
+                        Glide.with(holder.itemView)
+                                .load(url)
+                                .apply(RequestOptions.bitmapTransform(new RoundedCorners(30)))
+                                .into(holder.imageView);
+                    }
+                })
+                .addBannerLifecycleObserver(this)//添加生命周期观察者
+                .setIndicator(new CircleIndicator(getContext()));
+        //更多使用方法仔细阅读文档，或者查看demo
     }
 
     private void init() {

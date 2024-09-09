@@ -61,6 +61,7 @@ public class HistoryFragment extends Fragment {
 
         MyView myView = new MyView(getContext());
         binding.getRoot().addView(myView);
+
     }
 
 
