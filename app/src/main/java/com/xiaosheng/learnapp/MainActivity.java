@@ -11,11 +11,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 
+import com.github.eprendre.tingshu.sources.AudioUrlWebViewExtractor;
+import com.github.eprendre.tingshu.sources.AudioUrlWebViewSniffExtractor;
 import com.google.android.material.navigation.NavigationBarView;
 import com.xiaosheng.learnapp.adapter.WechatPageAdapter;
 import com.xiaosheng.learnapp.databinding.ActivityMainBinding;
 import com.xiaosheng.learnapp.receiver.DynamicReceiver;
 import com.xiaosheng.learnapp.service.MyService;
+import com.xiaosheng.learnapp.utils.AppContextUtil;
+import com.xiaosheng.learnapp.utils.ThreadUtil;
 
 import java.util.zip.Inflater;
 
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        AppContextUtil.initialize(this);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -54,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
 
         // 注册动态广播
         registerDynamicReceiver();
-
+        AudioUrlWebViewSniffExtractor.getInstance();
+        AudioUrlWebViewExtractor.initWebViewIfNeeded();
     }
 
     private void registerDynamicReceiver() {
@@ -70,5 +76,9 @@ public class MainActivity extends AppCompatActivity {
         ft.commit();
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ThreadUtil.shutdownThreadPool();
+    }
 }

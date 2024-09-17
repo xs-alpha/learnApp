@@ -1,4 +1,5 @@
 import android.databinding.tool.writer.ViewBinding
+import org.gradle.internal.impldep.com.fasterxml.jackson.core.JsonPointer.compile
 
 plugins {
     id("com.android.application")
@@ -7,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.xiaosheng.learnapp"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.xiaosheng.learnapp"
@@ -50,6 +51,7 @@ dependencies {
     implementation("com.google.android.material:material:1.5.0")
     implementation("androidx.constraintlayout:constraintlayout:2.0.0-alpha5")
     implementation("androidx.core:core-ktx:1.10.1")
+    implementation("androidx.activity:activity:1.8.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit-gtest:1.0.0-alpha02")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
@@ -65,4 +67,24 @@ dependencies {
     implementation ("com.github.kittinunf.fuel:fuel:2.3.1")
     implementation ("com.github.kittinunf.fuel:fuel-json:2.3.1")
     implementation ("com.google.code.gson:gson:2.10")
+    // https://mvnrepository.com/artifact/io.reactivex/rxjava
+//    implementation ("io.reactivex.rxjava2:rxkotlin:2.4.0")
+//    implementation ("io.reactivex.rxjava2:rxjava:2.2.21")
+    // https://mvnrepository.com/artifact/io.reactivex/rxandroid
+//    implementation("io.reactivex:rxandroid:1.2.1")
+    implementation("androidx.room:room-runtime:2.2.5")
+    annotationProcessor("androidx.room:room-compiler:2.2.5")
+    // rxbus
+    implementation ("com.hwangjr.rxbus:rxbus:3.0.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+//    //引入rxJava
+//    implementation ("io.reactivex.rxjava2:rxjava:2.1.8")
+//    //引入rxAndroid
+//    implementation ("io.reactivex.rxjava2:rxandroid:2.0.1")
+//    //引入rxJava适配器，方便rxJava与retrofit的结合
+//    implementation ("com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0")
+//    //引入J神的rxrelay2，出现异常仍然可以处理
+//    implementation ("com.jakewharton.rxrelay2:rxrelay:2.0.0")
 }

@@ -74,6 +74,23 @@ data class BookDetail(
     val title: String = ""
 }
 
+//fun BookDetail(
+//    episodes: List<Episode?>?,
+//    intro: String,
+//    author: String,
+//    coverUrl: String,
+//    updateStatus: Int,
+//    updateTime: String
+//) {
+//    BookDetail(
+//        episodes,
+//        if (intro.isEmpty()) "" else intro,
+//        if (author.isEmpty()) "" else author,
+//        if (coverUrl.isEmpty()) "" else coverUrl,
+//        if (updateStatus == 0) 0 else updateStatus,
+//        if (updateTime.isEmpty()) "" else updateTime
+//    )
+//}
 
 /**
  * 大分类
